@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class ArrayStats {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements in the array: ");
+        int n = input.nextInt();
+        int[] arrNum = new int[n];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            arrNum[i] = input.nextInt();
+        }
+
+        int min_val = arrNum[0];
+        int max_val = arrNum[0];
+        int sum_val = 0;
+        int count = arrNum.length;
+
+        for (int i = 0; i < arrNum.length; i++) {
+            if (arrNum[i] < min_val) {
+                min_val = arrNum[i];
+            }
+            if (arrNum[i] > max_val) {
+                max_val = arrNum[i];
+            }
+            sum_val += arrNum[i];
+        }
+
+        double avg_val = (double) sum_val / count;
+
+        System.out.println("The element with the Minimum value: " + min_val);
+        System.out.println("The element with the Maximum value: " + max_val);
+        System.out.println("Average of all array elements: " + avg_val);
+        System.out.println("Total number of array elements: " + count);
+
+        input.close();
+    }
+}
